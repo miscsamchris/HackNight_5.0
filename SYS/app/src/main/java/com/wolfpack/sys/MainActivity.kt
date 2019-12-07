@@ -6,7 +6,6 @@ import android.R.id.edit
 import android.content.Intent
 import android.content.SharedPreferences.Editor
 import android.content.SharedPreferences
-import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.util.Log
@@ -20,8 +19,14 @@ import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.Toast
+import android.widget.AdapterView
+import android.widget.AdapterView.OnItemClickListener
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.view.View
 
-class Dungeon(val name:String,val location:String,val rating:String)
 
 class MainActivity : AppCompatActivity() {
     private lateinit var database: DatabaseReference
@@ -37,25 +42,20 @@ class MainActivity : AppCompatActivity() {
             startActivity(i)
         }
         var dungeons=ArrayList<String>()
-        val menuListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                dataSnapshot.children.forEach {
-                    var map=ArrayList<Dungeon>()
-
-                    dataSnapshot.children.mapNotNullTo(map) { it.getValue<Dungeon>(Dungeon::class.java)
-                    }
-                    map.forEach {
-                        dungeons.add(it.name)
-                    }
-                }
-            }
-            override fun onCancelled(databaseError: DatabaseError) {
-                println("loadPost:onCancelled ${databaseError.toException()}")
-            }
-        }
-        database.child("Dungeons/").addValueEventListener(menuListener)
+        dungeons.addAll(listOf("Ram's Storage","Oyo 2193 Manyata palace","Happy Residence","Backpacker panda"))
         val arrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1, dungeons.toList())
         list!!.adapter=arrayAdapter
+        val arrayAdapter2 = ArrayAdapter(this,android.R.layout.simple_spinner_item, listOf("Bangalore","Chennai","Mysore"))
+        arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        Location!!.adapter=arrayAdapter2
+        Location.setOnItemClickListener(object : OnItemClickListener {
+            override fun onItemClick(arg0: AdapterView<*>, arg1: View, position: Int, arg3: Long) {
+                val i=Intent(this@MainActivity,BookingPage::class.java)
+                i.putExtra("id",position)
+                startActivity(i)
+            }
+        })
+
     }
 
 }
