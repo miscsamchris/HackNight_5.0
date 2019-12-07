@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
-
+    tools:context=".Registration">
     <EditText
         android:id="@+id/user_name"
         android:layout_width="308dp"
@@ -30,30 +29,39 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_name" />
-
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="307dp"
+        android:layout_height="38dp"
+        android:layout_margin="15dp"
+        android:layout_marginTop="32dp"
+        android:hint="Address"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+    <EditText
+        android:id="@+id/aadharNumber"
+        android:layout_width="307dp"
+        android:layout_height="38dp"
+        android:layout_margin="15dp"
+        android:layout_marginTop="32dp"
+        android:hint="Aadhar Number"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address" />
     <Button
-        android:id="@+id/btnLogIn"
+        android:id="@+id/btnReg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="Login In"
+        android:text="Sign Up"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/registration"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="New user? Register. Click here."
-        android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
