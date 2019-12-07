@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "749494257332",
+    "firebase_url": "https://syshat-956f2.firebaseio.com",
+    "project_id": "syshat-956f2",
+    "storage_bucket": "syshat-956f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749494257332:android:c76427f471658fbd19b9e1",
+        "android_client_info": {
+          "package_name": "com.wolfpack.sys_hat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749494257332-m02k2qgp7ji230qcnghompam7jg6mp2q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq2w6SlasHcgaJhvQrILtVCCirrbbJ3W4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749494257332-m02k2qgp7ji230qcnghompam7jg6mp2q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
