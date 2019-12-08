@@ -48,14 +48,18 @@ class MainActivity : AppCompatActivity() {
         val arrayAdapter2 = ArrayAdapter(this,android.R.layout.simple_spinner_item, listOf("Bangalore","Chennai","Mysore"))
         arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         Location!!.adapter=arrayAdapter2
-        Location.setOnItemClickListener(object : OnItemClickListener {
-            override fun onItemClick(arg0: AdapterView<*>, arg1: View, position: Int, arg3: Long) {
-                val i=Intent(this@MainActivity,BookingPage::class.java)
-                i.putExtra("id",position)
+        list.onItemClickListener=object: OnItemClickListener{
+            override fun onItemClick(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val i= Intent(this@MainActivity,BookingPage::class.java)
+                i.putExtra("ID",position)
                 startActivity(i)
             }
-        })
-
+        }
     }
 
 }
